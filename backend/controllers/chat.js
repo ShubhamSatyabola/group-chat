@@ -1,5 +1,16 @@
 const Chat = require('../models/chat')
 
+exports.getChat = async (req,res,next) => {
+    try{
+        const chat = await Chat.findAll();
+        res.status(200).json({success:true,chat:chat})
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).json({success:false,message:'something went wrong'})
+    }
+}
+
 exports.postChat = async (req,res,next)=>{
     try{
         const message = req.body.message

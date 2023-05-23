@@ -12,7 +12,9 @@ async function signup(e){
         const password = document.getElementById('password').value;
 
         const obj = {name, email, number, password};
-        console.log(obj)
+        const response = await axios.post('http://localhost:3000/user/signup',obj)
+        alert(response.data.message)
+        window.location.href='../login/login.html'
     }
     catch(err){
         console.log(err)

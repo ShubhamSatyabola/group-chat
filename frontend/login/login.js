@@ -12,6 +12,7 @@ async function login(e){
         console.log(response)
         alert(response.data.message)
         localStorage.setItem('token',response.data.token)
+        window.location.href = '../chat/chat.html'
     }
     catch(err){
         console.log(err)
