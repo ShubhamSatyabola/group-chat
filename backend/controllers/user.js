@@ -54,7 +54,7 @@ exports.postLogin = async (req,res,next)=>{
                     return res.status(500).json({success:false,message:'something went wrong'})
                 }
                 if(result==true){
-                    return res.status(200).json({success:true,message:'login successfully',
+                    return res.status(200).json({success:true,message:'login successfully',userName:user.name,email: user.email,
                     token:generateAcessToken(user.id)
                 })
                 }

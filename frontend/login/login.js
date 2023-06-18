@@ -12,7 +12,9 @@ async function login(e){
         console.log(response)
         alert(response.data.message)
         localStorage.setItem('token',response.data.token)
-        window.location.href = '../chat/chat.html'
+        localStorage.setItem('username',response.data.userName)
+        localStorage.setItem('email' , response.data.email);
+        window.location.href = '../group/group.html'
     }
     catch(err){
         console.log(err)

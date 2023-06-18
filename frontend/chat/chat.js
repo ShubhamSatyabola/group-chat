@@ -30,7 +30,7 @@ showOtherMessgeOnScreen({message:data})
 
 
 window.addEventListener('DOMContentLoaded', async () => {
-   // const setIntervalId = setInterval(async ()=>{
+   const setIntervalId = setInterval(async ()=>{
         document.getElementById('groupname').innerText = groupName;
     document.getElementById('username').innerText = `Hey! ${username.split(" ")[0]}`;
 
@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     openBox()
 
-    //},2000)
+    },2000)
     //clearInterval(setIntervalId)
 })
 
@@ -385,9 +385,10 @@ async function uploadFile(){
         const upload = document.getElementById('uploadFile')
         formData = new FormData(upload)
         const response = await axios.post(`${backendAPIs}/sendFile/${groupId}` , formData , { headers: { 'Authorization': token, "Content-Type":"multipart/form-data" } });
-        console.log(response.data);
+        //console.log(response.data);
         document.getElementById('sendFile').value = null;
-        showMyMessageOnScreen(responce.data.data);
+        window.location.reload
+        //showMyMessageOnScreen(responce.data.data);
         
     }
     catch(err){
