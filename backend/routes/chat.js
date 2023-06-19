@@ -3,6 +3,9 @@ const express = require('express');
 const authenticateController = require('../middleware/authenticate')
 const chatController = require('../controllers/chat')
 const router  = express.Router();
+const multer = require('multer')
+const upload = multer()
+
 
 router.get('/getMessage/:groupId', authenticateController.authenticate, chatController.getMessage)
 router.post('/sendMessage/:groupId', authenticateController.authenticate, chatController.sendMessage)
@@ -15,8 +18,6 @@ router.post('/makeAdmin/:groupId' , authenticateController.authenticate ,  chatC
 router.post('/deleteUser/:groupId' , authenticateController.authenticate ,  chatController.deleteUser);
 
 router.post('/removeAdmin/:groupId' , authenticateController.authenticate ,  chatController.removeAdmin);
-const multer = require('multer')
-const upload = multer()
 
 router.post('/sendfile/:groupId',authenticateController.authenticate,upload.single('file'),chatController.sendFile)
 

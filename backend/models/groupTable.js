@@ -12,4 +12,5 @@ const groupTable = sequelize.define('groupTable', {
         type: Sequelize.BOOLEAN
     }
 })
- module.exports = groupTable;
+ 
+module.exports = groupTable;

@@ -10,4 +10,5 @@ const Chat = sequelize.define('chat', {
     },
     message:Sequelize.STRING
 })
- module.exports = Chat;
+ 
+module.exports = Chat;

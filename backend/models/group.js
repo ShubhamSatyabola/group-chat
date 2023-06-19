@@ -11,4 +11,5 @@ const Group = sequelize.define('group', {
     groupName: Sequelize.STRING,
     
 })
- module.exports = Group;
+ 
+module.exports = Group;

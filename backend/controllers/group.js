@@ -1,6 +1,7 @@
 const Group = require('../models/group');
 const UserGroup = require('../models/groupTable');
 
+
 exports.createGroup = async (req, res, next) => {
     const {group_name} = req.body;
 

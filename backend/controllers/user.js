@@ -32,6 +32,7 @@ exports.postSignup = async (req,res)=>{
             })
         }
         else{
+            
             return res.status(500).json({success:false,message:'User already exist'})
         }
         }

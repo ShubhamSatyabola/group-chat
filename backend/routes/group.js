@@ -7,4 +7,5 @@ router.post('/createGroup', authenticate.authenticate, groupController.createGro
 router.get('/getGroup',authenticate.authenticate,groupController.getGroups)
 
 
+
 module.exports = router
