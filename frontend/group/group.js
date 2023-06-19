@@ -7,7 +7,7 @@ const groups = document.getElementById('groups');
 window.addEventListener('DOMContentLoaded', async() => {
     const intervalId = setInterval(async()=>{
         const response = await axios.get(`${backendAPIs}/getGroup`, {headers : {'Authorization' : token} });
-        //console.log(response.data);
+        
         if(!response.data.groups.length){
            return groups.style.display = "none";
         }

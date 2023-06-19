@@ -214,22 +214,6 @@ burgerButton.addEventListener("click", function() {
 });
 
 
-// //burger-button funtionallity
-// const menuBtn = document.querySelector('.menu-btn');
-// let menuOpen = false;
-// menuBtn.addEventListener('click', () => {
-//     if (!menuOpen) {
-//         menuBtn.classList.add('open');
-//         openBox();
-//         menuOpen = true;
-//     }
-//     else {
-//         menuBtn.classList.remove('open');
-//         menuOpen = false;
-//         allName.innerHTML = "";
-//     }
-// })
-
 
 async function openBox() {
     const users = await axios.get(`${backendAPIs}/getUsers/${groupId}`,{ headers: { 'Authorization': token } });
